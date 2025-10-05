@@ -1,11 +1,9 @@
+import type { PropsWithChildren } from 'react'
+import { Provider } from './providers/provider.tsx'
 import './App.css'
 
-function App() {
-  return (
-    <>
-      <div>App</div>
-    </>
-  )
+function App({ children }: PropsWithChildren) {
+  return <Provider>{children}</Provider>
 }
 
 export default App
