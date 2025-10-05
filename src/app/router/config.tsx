@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { RootLayout } from '../../shared/root-layout/root-layout.tsx'
+import { RootLayout } from '../../shared/ui/root-layout/root-layout.tsx'
 import { PersonalDataPage } from '../../pages/personal-data-page/personal-data-page.tsx'
 import { LoanParamsPage } from '../../pages/loan-params-page/loan-params-page.tsx'
 import { AddressWorkPage } from '../../pages/address-work-page/address-work-page.tsx'

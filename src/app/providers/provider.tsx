@@ -1,11 +1,10 @@
-import type { PropsWithChildren } from 'react'
-import { RouterProviderComponent } from './router-provider.tsx'
+import { QueryProvider } from './query-client-provider'
+import { RouterProviderComponent } from './router-provider'
 
-export const Provider = ({ children }: PropsWithChildren) => {
+export const Provider = () => {
   return (
-    <>
+    <QueryProvider>
       <RouterProviderComponent />
-      {children}
-    </>
+    </QueryProvider>
   )
 }
