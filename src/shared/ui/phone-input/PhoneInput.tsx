@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react'
+import { IMaskInput } from 'react-imask'
 import styles from './PhoneInput.module.css'
 
 interface PhoneInputProps {
@@ -16,21 +16,6 @@ export const PhoneInput = ({
   label = 'Телефон',
   required = false,
 }: PhoneInputProps) => {
-  const formatPhoneNumber = (input: string): string => {
-    const digits = input.replace(/\D/g, '')
-    const limited = digits.slice(0, 10)
-
-    if (limited.length === 0) return ''
-    if (limited.length <= 4) return limited
-    if (limited.length <= 7) return `${limited.slice(0, 4)} ${limited.slice(4)}`
-    return `${limited.slice(0, 4)} ${limited.slice(4, 7)} ${limited.slice(7)}`
-  }
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatPhoneNumber(e.target.value)
-    onChange(formatted)
-  }
-
   return (
     <div className={styles.container}>
       {label && (
@@ -39,11 +24,12 @@ export const PhoneInput = ({
           {required && <span className={styles.required}>*</span>}
         </label>
       )}
-      <input
-        type="tel"
+      <IMaskInput
+        mask="0000 000 000"
         value={value}
-        onChange={handleChange}
+        onAccept={(value) => onChange(value)}
         placeholder="0XXX XXX XXX"
+        type="tel"
         className={`${styles.input} ${error ? styles.inputError : ''}`}
       />
       {error && <span className={styles.error}>{error}</span>}

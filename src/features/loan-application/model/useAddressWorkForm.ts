@@ -1,7 +1,10 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useQuery } from '@tanstack/react-query'
-import { addressWorkSchema, type AddressWorkFormValues } from './addressWorkSchema'
+import {
+  addressWorkSchema,
+  type AddressWorkFormValues,
+} from './addressWorkSchema'
 import type { WorkplaceData } from '../../../shared/lib/types'
 
 interface UseAddressWorkFormProps {

@@ -33,7 +33,7 @@ export const LoanParamsPage = () => {
   const handleModalClose = () => {
     closeModal()
     reset()
-    navigate(Paths.STEP_ONE)
+    navigate(Paths.HOME)
   }
 
   const { handleSubmit, errors, control, isSubmitting } = useLoanParamsForm({

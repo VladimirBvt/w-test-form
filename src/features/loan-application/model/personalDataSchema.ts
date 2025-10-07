@@ -4,11 +4,15 @@ export const personalDataSchema = yup.object({
   phone: yup
     .string()
     .required('Телефон обязателен для заполнения')
-    .test('phone-format', 'Введите корректный номер телефона (0XXX XXX XXX)', (value) => {
-      if (!value) return false
-      const digitsOnly = value.replace(/\s/g, '')
-      return digitsOnly.length === 10 && /^\d{10}$/.test(digitsOnly)
-    }),
+    .test(
+      'phone-format',
+      'Введите корректный номер телефона (0XXX XXX XXX)',
+      (value) => {
+        if (!value) return false
+        const digitsOnly = value.replace(/[\s_]/g, '')
+        return digitsOnly.length === 10 && /^0\d{9}$/.test(digitsOnly)
+      },
+    ),
   firstName: yup
     .string()
     .required('Имя обязательно для заполнения')

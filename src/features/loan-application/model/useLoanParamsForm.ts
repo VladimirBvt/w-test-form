@@ -21,7 +21,7 @@ interface SubmitApplicationResponse {
 }
 
 const submitApplication = async (
-  payload: SubmitApplicationPayload
+  payload: SubmitApplicationPayload,
 ): Promise<SubmitApplicationResponse> => {
   const response = await fetch('https://dummyjson.com/products/add', {
     method: 'POST',

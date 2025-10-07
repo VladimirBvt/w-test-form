@@ -1,6 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { personalDataSchema, type PersonalDataFormValues } from './personalDataSchema'
+import {
+  personalDataSchema,
+  type PersonalDataFormValues,
+} from './personalDataSchema'
 import type { UserData } from '../../../shared/lib/types'
 
 interface UsePersonalDataFormProps {
